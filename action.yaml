@@ -13,6 +13,5 @@ runs:
         go-version: 1.22.2
     - shell: bash
       run: |
-        cd semis
         go build .
         sudo install -m 700 semis /usr/local/bin/semis
