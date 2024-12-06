@@ -1,0 +1,18 @@
+name: Setup semis binary
+description: Installs semver comparison binary
+
+runs:
+  using: composite
+
+  steps:
+    - uses: actions/checkout@v3
+      with:
+        repository: debdutdeb/semis
+    - uses: actions/setup-go@v5
+      with:
+        go-version: 1.22.2
+    - shell: bash
+      run: |
+        cd semis
+        go build .
+        sudo install -m 700 semis /usr/local/bin/semis
