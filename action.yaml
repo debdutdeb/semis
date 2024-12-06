@@ -14,4 +14,4 @@ runs:
     - shell: bash
       run: |
         go build .
-        sudo install -m 700 semis /usr/local/bin/semis
+        sudo install -m 755 -p semis /usr/local/bin/semis
