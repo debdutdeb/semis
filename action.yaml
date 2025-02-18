@@ -8,10 +8,12 @@ runs:
     - uses: actions/checkout@v3
       with:
         repository: debdutdeb/semis
+        path: semis
     - uses: actions/setup-go@v5
       with:
         go-version: 1.22.2
     - shell: bash
       run: |
+        cd semis
         go build .
         sudo install -m 755 -p semis /usr/local/bin/semis
